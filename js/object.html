@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    
+    <br>
+    <script>
+        var student = {
+            data : [],
+            addStudent : function(id, name, email) {
+                var item = {
+                    id : id,
+                    name : name,
+                    email : email,
+                }
+                this.data.push(item);
+            },
+            viewStudent : function() {
+                var listStudent = this.data;
+                for(var i = 0; i < listStudent.length ; i++) {
+                    document.write("<div>" + listStudent[i].id + "|" + listStudent[i].name + "|" + listStudent[i].email + "</div>");
+                }
+            },
+            removeStudent : function(id) {
+                for(var i = 0; i < this.data.length; i++) {
+                    if(this.data[i].id === id) {
+                        this.data.splice(i , 1);
+                    }
+                }
+            },
+            editStudent : function(id , name , email) {
+                for(var i = 0 ; i< this.data.length ; i++) {
+                    if(this.data[i].id === id) {
+                        this.data[i].name = name;
+                        this.data[i].email =  email;
+                    }
+                }
+            }
+
+
+        }
+
+        document.write("danh sach sinh vien");
+
+        document.write('<h4>Danh sách sinh viên sau khi thêm hai sinh viên</h4>');
+    student.addStudent("sv001", 'Nguyễn Văn Cường', "thehalfheart@gmail.com");
+    student.addStudent("sv002", 'Vũ Thị Thu Tình', "freetuts.net@gmail.com");
+    student.viewStudent();
+
+    document.write('<h4>Danh sách sinh viên sau khi xóa một sinh viên</h4>');
+    student.removeStudent('sv001');
+    student.viewStudent();
+
+    document.write('<h4>Danh sách sinh viên sau khi sửa thông tin</h4>');
+    student.editStudent('sv002', "Tên Sinh Viên Mới", "mrcuong.winter@gmail.com");
+    student.viewStudent();
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate</title>
+</head>
+<body>
+    <div id="content">Nội dung của thẻ DIV</div>
+    <input type="button" value="Lấy nội dung" id="get_content" onclick="get_content()" />
+    <input type="button" value="Thay đổi nội dung" id="set_content" onclick="set_content()" />
+
+    <script>
+        function set_content() {
+            document.getElementById('content').innerHTML = 'Noi dung da duoc thay doi'
+        }
+
+        function get_content() {
+            var html = document.getElementById('content').innerHTML;
+
+            alert('noi dung la ' + html);
+        }
+
+        
+    </script>
+</body>
+</html>

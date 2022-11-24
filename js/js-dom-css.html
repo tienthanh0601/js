@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CSS</title>
+
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .fz {
+            font-size: 18px;
+            font-style: italic;
+            color: green;
+            text-transform: inherit;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="#">Hello</a>
+    <a href="#">you can ok</a>
+
+    <p>Copy right</p>
+
+    <script>
+        let aList = document.getElementsByTagName('a');
+        for(let i = 0; i < aList.length ;i++) {
+            aList[i].style.color = 'red';
+            aList[i].style.fontSize = '20px'
+        }
+
+        let pList = document.querySelector('p');
+        pList.classList = 'center fz';
+
+        pList.setAttribute('class', 'center')
+        
+    </script>
+</body>
+</html>
